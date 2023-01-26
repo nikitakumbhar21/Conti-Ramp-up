@@ -138,13 +138,13 @@ git push origin master
 git remote -v
 git remote add origin <url>
 git remote set-url origin <url>
-git branch
-git branch <name>
-git checkout <name>
-git checkout -b <name>
-git merge <branch>
-git pull origin <branch>
-git diff --stat
+git branch :---> lists all branches on your local machine. 
+git branch <name> :---> If you want to create a new branch, you can use git branch <name>, with <name> representing the name of the branch, such as “master”.
+git checkout <name> :---> command switches to an existing branch.
+git checkout -b <name> :--->  command to create a new branch and immediately switch to it.
+git merge <branch> :--->  merge that branch back into your master branch
+git pull origin <branch> :--->  to pull the most recent changes from that remote branch.
+git diff --stat :---->  to see how much each file has been changed, you can use git diff to see the number of lines changed in each file.
 git log
 git checkout c3d88eaa1aa4e4d5f
 git push -f origin master
