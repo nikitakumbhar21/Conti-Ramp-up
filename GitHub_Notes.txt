@@ -1,0 +1,156 @@
+						||****** Git + Git Hub******||
+
+				Git hub is Distributed version controller. It save all changes has been done.
+		We can maintain the version of software / code of program, so that we can fetch code for modification or vise a versa.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+					            ||---------- How to install Git? -----------||
+
+->>> Git installation in Windows :--  Type or google search bar :-- git windows install :-- https://git-scm.com/downlaod/win
+
+->>> sudo apt-get install git :-->  Git installation in Linux thorugh commands.
+
+->>> Go to google and search https://github.com for open and login into GitHub account.
+
+Set up git username and email Id on Ubuntu / Linux, Run below step1) and step2) commands.
+step 1) ->>> git config --global user.name "name of GitHub user"  :--> username that provide in Github, this command is used for configuration with GitHub Username.( for communication between GitHub and Linux)
+	e.g.
+	git config --global user.name "nikitakumbhar21"
+
+step 2) ->>> git config --global user.email "type email  which is use for login GitHub account" :--> this command is used for configuration with email ID of GitHub account., 
+		.( for communication between GitHub/Server and user )		 which is use for save the all changes OR maintain version of code.							e.g.
+	git config --global user.email "kumbharniki21.nk@gmail.com"
+
+Note :--> After Configuration with GitHub, Go to GitHub and create New Repository
+
+step 3) ->>> mkdir Ramp_Up :--> Use to new directory.
+
+step 4) ->>> cd Ramp_Up :--> Use to create another directory under mkdir
+
+step 5) ->>> git clone https://github.com/nikitakumbhar21/Conti-Ramp-up.git :--> copy link from |<>code| ( link :-- https://github.com/nikitakumbhar21/Conti-Ramp-Up.git )
+							         Used to point to an existing repo and make a clone or copy of that repo at in a new directory, at another location.
+								this URL/Link, which gives link to GitHub directory.
+	e.g.
+	 git clone https://github.com/nikitakumbhar21/Conti-Ramp-up.git
+
+	Cloning into 'Conti-Ramp-up'...
+	remote: Enumerating objects: 5, done.
+	remote: Counting objects: 100% (5/5), done.
+	remote: Compressing objects: 100% (4/4), done.
+	remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+	Unpacking objects: 100% (5/5), done.
+	Checking connectivity... done.
+ 	
+step 6) ->>>  ls :-- checking list of files in current directory.
+	e.g. 
+	         ee212281@lpp-ee212281-vm:~/Ramp_Up$ 	ls
+		Conti-Ramp-up
+	         ee212281@lpp-ee212281-vm:~/Ramp_Up$ 	cd  Conti-Ramp-up
+	         ee212281@lpp-ee212281-vm:~/Ramp_Up/Conti-Ramp-up$ 	ls
+							LICENSE  README.md
+
+step 7) ->>> vi demo.txt :--> Create file (for knowing operations based on this file .like add, modify, commit etc)
+
+step 8) ->>> git status :--> Create any file for knowing status of that file vi demo.txt, 
+	e.g.
+	git status
+
+	On branch main
+	Your branch is up-to-date with 'origin/main'.
+	Untracked files:
+  	(use "git add <file>..." to include in what will be committed)
+
+		test.txt
+
+	nothing added to commit but untracked files present (use "git add" to track)
+
+step 9) ->>> git add demo.txt :---> Add this new file into the repo/ in Git.
+
+step 10) ->>> git status :--> knowing status of added new file into repo
+	e.g.
+	git status
+
+	On branch main
+	Your branch is up-to-date with 'origin/main'.
+	Changes to be committed:
+	(use "git reset HEAD <file>..." to unstage)
+
+		new file:   test.txt
+ 
+
+step 11) ->>> git commit -m "type msg/comment"  :--> this command is used to Commit or save the changes file to repo/ Git.
+						where, m -> It's denoted as a discription.		
+						Msg / comment -> It is used for what it purpose of this commit.
+				
+	e.g.
+	git commit -m "File Save Successfully"
+
+	[main 4f0dc30] File Save Successfully
+ 	1 file changed, 1 insertion(+)
+ 	create mode 100644 test.txt
+
+step 12) ->>> git push :--> Push save or commited file into GitHub repo.
+	e.g.
+NOTE :-->  Before push file into GitHub repo, need create token for that.	
+	Steps for generating token :
+	GO to profile(right corner side) -> Setting -> Developer settings -> Personal access token -> click on Token(classic) -> 
+	Generate new token -> click on Generate new token(classic) -> type some Note for token -> click on all check boxes ->
+	 Click on Generate Token -> copy this token URL/token as a password for push file.
+	e.g.
+	- - - - - - -
+	- - - - - - - 
+	Username for 'https://github.com': nikitakumbhar21 (name of GItHub)
+	Password for 'https://nikitakumbhar21@github.com':  ( HERE YOU CAN PASTE GENERATED TOKEN URL  e.g. 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 )
+	Counting objects: 3, done.
+	Compressing objects: 100% (2/2), done.
+
+->>> git push -u origin master
+	usename:nikitakumbhar21
+	password: ********
+
+->>> Generatd Token for push final file/copy/code :--> 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
+
+-->>>> git init :--> Initialized empty Git Repository in directory.( created directory is hidden as .git)
+-->>>> ls -a
+	e.g.   .     ..      .git
+-->>>>  rm -rf .git :--> this ocmmand is used for removing directory
+-->>>> git remote add  origin https://github.com/nikitakumbhar21/Conti-Ramp-up.git :--> this URL/Link, which gives link to GitHub directory.
+
+->>> nano demo.txt :--> this command is used for createing a new file
+press ctrl + O for save changes and
+press ctrl + X for exit.
+
+->>> ls
+->>> git add demo.txt
+->>> git commit -m " added file"
+->>> git remote add origin https://github.com/username/directory_name.git
+->>> git push -u origin master
+	usename:nikitakumbhar21
+	password: ********
+
+->>> git add file1.txt file2.txt :---- this is used for add multiple files followed by sapce between two files.
+->>> git add *.txt :----- this is used for add all files with " .txt " distictions.
+->>>  echo world >> file1.txt :---- this command is used for modify files, ">>" this symbol is used for append file
+
+git add --all
+git commit -am "<message>"
+git push origin master
+git remote -v
+git remote add origin <url>
+git remote set-url origin <url>
+git branch
+git branch <name>
+git checkout <name>
+git checkout -b <name>
+git merge <branch>
+git pull origin <branch>
+git diff --stat
+git log
+git checkout c3d88eaa1aa4e4d5f
+git push -f origin master
+git rebase -i HEAD~4
+git commit --amend
+
+
+
+
