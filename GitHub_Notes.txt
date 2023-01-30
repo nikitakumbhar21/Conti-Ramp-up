@@ -145,12 +145,12 @@ git checkout -b <name> :--->  command to create a new branch and immediately swi
 git merge <branch> :--->  merge that branch back into your master branch
 git pull origin <branch> :--->  to pull the most recent changes from that remote branch.
 git diff --stat :---->  to see how much each file has been changed, you can use git diff to see the number of lines changed in each file.
-git log
-git checkout c3d88eaa1aa4e4d5f
-git push -f origin master
-git rebase -i HEAD~4
-git commit --amend
 
+<<<<<---------- Advance Commands  ------->>>>>
 
-
+git log :--->  to use this to see the history of your commits.
+git checkout c3d88eaa1aa4e4d5f :--->  This will detach your app from the current version (because you’re editing a historical record, rather than the current version).
+git push -f origin master :-->  It will overwrite the history of your app and you will lose whatever came after.
+git rebase -i HEAD~4 :--->   to combine all of those commits into a single, concise commit.
+git commit --amend :--->  to change the commit message.
 
