@@ -132,25 +132,47 @@ press ctrl + X for exit.
 ->>> git add *.txt :----- this is used for add all files with " .txt " distictions.
 ->>>  echo world >> file1.txt :---- this command is used for modify files, ">>" this symbol is used for append file
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 git add --all
 git commit -am "<message>"
 git push origin master
 git remote -v
 git remote add origin <url>
-git remote set-url origin <url>
-git branch :---> lists all branches on your local machine. 
-git branch <name> :---> If you want to create a new branch, you can use git branch <name>, with <name> representing the name of the branch, such as “master”.
-git checkout <name> :---> command switches to an existing branch.
-git checkout -b <name> :--->  command to create a new branch and immediately switch to it.
+git remote set-url origin <url> :---->  we can change directory name in this <url> 
+
 git merge <branch> :--->  merge that branch back into your master branch
 git pull origin <branch> :--->  to pull the most recent changes from that remote branch.
+git diff :---> to see the number of lines changed in each file.
 git diff --stat :---->  to see how much each file has been changed, you can use git diff to see the number of lines changed in each file.
-git log
-git checkout c3d88eaa1aa4e4d5f
-git push -f origin master
-git rebase -i HEAD~4
-git commit --amend
 
+<<<<<---------- Advance Commands  ------->>>>>
 
+git log :--->  to use this to see the history of your commits.
+git checkout c3d88eaa1aa4e4d5f :--->  This will detach your app from the current version (because you’re editing a historical record, rather than the current version).
+git revert <commit_ID> :---> This  command is used for undoing changes to a repository's commit history. - update last version, 
+	        previous one present but it will recommit the changes.
+	        It will undo but delete into log.
+git reset <commit_ID> :---> delete previous/last commit.
+		--soft :--> changes will be undo and there present in local also., undo the commit
+		--hard :--->  does not keep any changes in staging area ., It will directly deleted.., changes will be undo but not saved in local also.
+git reset without hard :---> it wll be default mixed reset.
 
+git fsck :--->  to recover the files after a hard reset.
+
+git branch :---> lists all branches on your local machine. 
+git branch <branch-name> :---> If you want to create a new branch, you can use git branch <name>, with <name> representing the name of the branch, such as “master”.
+git checkout <branch-name> :---> command switches to an existing branch.
+git checkout -b <new-branch-name> :--->  command to create a new branch and immediately switch to it.
+
+git push -f origin master :-->  It will overwrite the history of your app and you will lose whatever came after.
+git rebase -i HEAD~4 :--->   to combine all of those commits into a single, concise commit.
+git commit --amend :--->  to change the commit message.
+
+git rebase -i (remove the revert commit)
+git reset --hard <commitID> (reset to the commit before the revert, you'll lose all local changes)
+git reset --soft <commitID> (same as above but keeps local changes)
+technically you can use git revert <commitId> to revert your revert.
+git log --oneline :---> 
+git commit -a -m "comment" :--->  not need to run "git add " command, instead of this we caan use  -a in commit command.
 
